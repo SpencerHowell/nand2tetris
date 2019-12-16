@@ -19,4 +19,13 @@ CHIP Mux8Way16 {
 
     PARTS:
     // Put your code here:
+    
+    // Select from top half of the table or bottom half using sel[2]
+    Mux16(a=a, b=e, sel=sel[2], out=w1);
+    Mux16(a=b, b=f, sel=sel[2], out=w2);
+    Mux16(a=c, b=g, sel=sel[2], out=w3);
+    Mux16(a=d, b=h, sel=sel[2], out=w4);
+
+    // Select from remaining values with Mux4Way16 and sel[1][0]
+    Mux4Way16(a=w1, b=w2, c=w3, d=w4, sel=sel[0..1], out=out);
 }

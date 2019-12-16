@@ -17,4 +17,12 @@ CHIP DMux4Way {
 
     PARTS:
     // Put your code here:
+    // First DMux to select from top half or bottom half of table
+    // using sel[1]
+    DMux(in=in, a=w1, b=w2, sel=sel[1]);
+
+    // Second level of Dmux selects the value in this half of the table
+    // using sel[0]
+    DMux(in=w1, a=a, b=b, sel=sel[0]);
+    DMux(in=w2, a=c, b=d, sel=sel[0]);
 }
