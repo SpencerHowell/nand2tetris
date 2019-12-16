@@ -1,0 +1,5 @@
+# Ignore output files
+*.out
+
+# Ignore Hardware Simulator data
+tools/bin/Hardware\ Simulator.dat
